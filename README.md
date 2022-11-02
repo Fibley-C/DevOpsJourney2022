@@ -3,12 +3,15 @@ Journey into DevOps
 
 Idea here is to lay out a roadmap on what tools would be useful for starting of as a DevOps engineer. Starting off with a local lab, then seeing if we can push out to a production enviroment such as Azure.
 
-# 1. Terraform
+#1. Terraform
 
-# 2. Ansible
+#2. Ansible
+- Web server
+- DB
+- Load balancer (nginx)
 
-# 3. Docker/Docker-compose
+#3. Docker/Docker-compose
 
-# 4. GitHub Actions
+#4. GitHub Actions
 
-# 5. Kubernetes (optional)
+#5. Kubernetes (optional)
