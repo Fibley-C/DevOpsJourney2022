@@ -1,0 +1,6 @@
+[control]
+ubuntu-control
+
+[nodes]
+ubuntu-worker01
+ubuntu-worker02
