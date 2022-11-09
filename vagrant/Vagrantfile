@@ -3,29 +3,32 @@ Vagrant.configure("2") do |config|
   NodeCount = 2
 
   (1..NodeCount).each do |i|
-      config.vm.define "ubuntu-worker0#{i}" do |node|
+      config.vm.define "worker0#{i}" do |node|
           node.vm.box = "generic/ubuntu2204"
-          node.vm.hostname = "ubuntu-worker0#{i}"
+          node.vm.hostname = "worker0#{i}"
           node.vm.network "private_network"
-          node.vm.synced_folder "./sync", "/sync"
+          node.vm.synced_folder "./sync", "/sync", smb_password: "password", smb_username: "administrator", mount_options: ["username=administrator","password=password"]
           node.vm.provider "hyperv" do |hyperv|
-              hyperv.vmname = "ubuntu-worker0#{i}"
+              hyperv.vmname = "worker0#{i}"
               hyperv.memory = 1024
+              hyperv.maxmemory = 0
               hyperv.cpus = 1
           end
       end
   end
 
 
-  config.vm.define "ubuntu-control" do |control|
+  config.vm.define "control" do |control|
       control.vm.box = "generic/ubuntu2204"
-      control.vm.hostname = "ubuntu-control"
+      control.vm.hostname = "control"
       control.vm.network "private_network"
-      control.vm.synced_folder "./sync", "/sync"
+      control.vm.synced_folder "./sync", "/sync", smb_password: "password", smb_username: "administrator", mount_options: ["username=administrator","password=password"]
       control.vm.provider "hyperv" do |hyperv|
-          hyperv.vmname = "ubuntu-control"
+          hyperv.vmname = "control"
           hyperv.memory = 1024
+          hyperv.maxmemory = 0
           hyperv.cpus = 2
       end
   end
+
 end

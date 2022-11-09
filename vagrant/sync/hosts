@@ -1,6 +1,3 @@
 127.0.0.1       localhost
 127.0.1.1       vagrant.vm      vagrant
 
-172.22.45.50 ubuntu-control
-172.22.43.194 ubuntu-worker01
-172.22.37.61 ubuntu-worker02

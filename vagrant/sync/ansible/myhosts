@@ -1,6 +1,11 @@
-[control]
-ubuntu-control
+[manager]
+control
 
 [nodes]
-ubuntu-worker01
-ubuntu-worker02
+worker01
+worker02
+
+[all:vars]
+ansible_connection=ssh
+ansible_user=vagrant
+ansible_ssh_pass=vagrant
